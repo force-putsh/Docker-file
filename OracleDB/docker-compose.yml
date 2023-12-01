@@ -1,0 +1,36 @@
+version: '3.1'
+
+services: 
+  oracle-db:
+    image: oracleinanutshell/oracle-xe-11g:latest
+    ports:
+      - 1521:1521
+      - 8080:8080
+    volumes:
+      - oracle_data:/u01/app/oracle
+    environment:
+      # - ORACLE_ALLOW_REMOTE=true
+      # - ORACLE_DISABLE_ASYNCH_IO=true
+      # - ORACLE_ENABLE_XDB=true
+      - ORACLE_PASSWORD=oracle
+      - ORACLE_USER=oracle
+      - ORACLE_SID=WeatherDB
+      # - ORACLE_CHARACTERSET=AL32UTF8
+      # - ORACLE_MEM=1G
+      # - ORACLE_DBCA_TOTAL_MEMORY=1024
+      - ORACLE_LISTENER_PORT=1521
+      - ORACLE_HTTP_PORT=8080
+      # - ORACLE_PASSWORD_EXPIRE=false
+      # - ORACLE_PASSWORD_LOCK_TIME=false
+      # - ORACLE_PASSWORD_GRACE_TIME=false
+      # - ORACLE_PASSWORD_LIFE_TIME=false
+      # - ORACLE_PASSWORD_REUSE_TIME=false
+      # - ORACLE_PASSWORD_REUSE_MAX=false
+      # - ORACLE_PASSWORD_VERIFY_FUNCTION=false
+      
+volumes:
+  oracle_data:
+
+# Oracle connection string
+# jdbc:oracle:thin:@localhost:1521:XE
+
