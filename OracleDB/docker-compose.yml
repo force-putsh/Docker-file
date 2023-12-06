@@ -9,7 +9,7 @@ services:
     volumes:
       - oracle_data:/u01/app/oracle
     environment:
-      # - ORACLE_ALLOW_REMOTE=true
+      - ORACLE_ALLOW_REMOTE=true
       # - ORACLE_DISABLE_ASYNCH_IO=true
       # - ORACLE_ENABLE_XDB=true
       - ORACLE_PASSWORD=oracle
