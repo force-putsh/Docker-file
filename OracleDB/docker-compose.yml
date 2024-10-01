@@ -5,7 +5,6 @@ services:
     image: oracleinanutshell/oracle-xe-11g:latest
     ports:
       - 1521:1521
-      - 8080:8080
     volumes:
       - oracle_data:/u01/app/oracle
     environment:
